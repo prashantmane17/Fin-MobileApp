@@ -8,6 +8,10 @@ import ForgotPasswordEmail from './src/components/forgetPassword/ForgotPasswordE
 import ForgotPasswordOTP from './src/components/forgetPassword/ForgotPasswordOTP';
 import ForgotPasswordReset from './src/components/forgetPassword/ForgotPasswordReset';
 import SignupScreen from './src/screens/SignupScreen';
+import Dashboard from './src/screens/Dashboard';
+import ProfileScreen from './src/screens/ProfileScreen';
+import LoanScreen from './src/screens/LoanScreen';
+import LoanDetails from './src/screens/LoanDetails';
 const Stack = createStackNavigator();
 export default function App() {
   const [exitApp, setExitApp] = useState(false);
@@ -33,8 +37,12 @@ export default function App() {
     <SafeAreaView className="flex-1 bg-white">
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="LoanDetails">
           <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+          <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
+          <Stack.Screen name="Loan" component={LoanScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="LoanDetails" component={LoanDetails} options={{ headerShown: false }} />
+          <Stack.Screen name="profile" component={ProfileScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
           <Stack.Screen name="ForgotPasswordEmail" component={ForgotPasswordEmail} options={{ headerShown: false }} />
           <Stack.Screen name="ForgotPasswordOTP" component={ForgotPasswordOTP} options={{ headerShown: false }} />
